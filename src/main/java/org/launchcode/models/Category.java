@@ -30,7 +30,7 @@ public class Category {
     //Add constructors
     public Category() {
 
-    };
+    }
 
     public Category(String name) {
         this.name = name;

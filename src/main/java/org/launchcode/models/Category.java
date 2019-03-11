@@ -10,36 +10,30 @@ import javax.validation.constraints.Size;
 @Entity
 public class Category {
 
+
     @Id
     @GeneratedValue
     private int id;
 
     @NotNull
-    @Size(min=3, max=15)
+    @Size(min=3,max=15)
     private String name;
 
-    //TODO #1 add a public getter and setter for name and id
+
+    // Add public getter for name and id
+    public String getName() { return name; }
+    public int getId() { return id; }
+    // Add public setter for name
+    public void setName(String newName) { this.name = newName; }
 
 
-    public String getName() {
-        return name;
-    }
+    //Add constructors
+    public Category() {
 
-    public void setName(String name) {
+    };
+
+    public Category(String name) {
         this.name = name;
     }
 
-    public int getId(){
-        return id;
-    }
-
-    //TODO #2 add two constructors to Category
-
-    public Category() {
-
-    }
-
-    public Category(String CategoryName) {
-        this.name = CategoryName;
-    }
 }

@@ -1,11 +1,11 @@
 package org.launchcode.models;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Category {
@@ -36,4 +36,17 @@ public class Category {
         this.name = name;
     }
 
+    //TODO add private
+    /**
+     * Within Category, add a private property cheeses of type List<Cheese> and initialize it to an empty ArrayList. After we set up the Cheese class to work with Category objects, this list will represent the list of all items in a given category. We'll do this in a bit.
+     *
+     * Add the following annotations:
+     *
+     * @OneToMany
+     * @JoinColumn(name = "category_id")
+     * private List<Cheese> cheeses = new ArrayList<>();
+     */
+    @OneToMany
+    @JoinColumn(name = "category_id")
+    private List<Cheese> cheeses = new ArrayList<>();
 }

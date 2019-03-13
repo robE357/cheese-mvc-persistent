@@ -78,7 +78,7 @@ public class CheeseController {
             cheeseDao.delete(cheeseId);
         }
 
-        return "redirect:";
+        return "redirect:/cheese/remove";
     }
 
 }
